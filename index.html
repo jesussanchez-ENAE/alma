@@ -988,26 +988,88 @@
     </section>
 
     <!-- WHAT IS ALMA -->
-    <section class="section" id="que-es" style="position: relative;">
+    <!-- WHAT IS ALMA -->
+    <section class="section" id="que-es" style="position: relative; background-color: #9ecbe0;">
         <img src="assets/shape-1.png" alt="" class="floating-shape shape-1" data-speed="0.1">
-        <div class="container section-header reveal">
-            <h2 class="section-title">¿Qué es el Programa ALMA?</h2>
-            <p>
-                ALMA es un programa europeo de empleo juvenil, desarrollado conjuntamente por <strong>ENAE Business
-                    School</strong> y el <strong>Sef</strong>, que combina formación, prácticas remuneradas en la UE y
-                acompañamiento profesional, diseñado para mejorar tu empleabilidad y abrirte nuevas oportunidades
-                laborales.
-            </p>
 
-            <div
-                style="padding: 1.5rem; background: #eef2ff; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 1.1rem; margin-top: 1rem;">
-                No es solo formación. <br>
-                <strong>👉 Es experiencia real de trabajo en Europa.</strong>
-                <div style="margin-top: 0.8rem; font-weight: 800; color: var(--primary);">
-                    <i class="fas fa-check-circle"></i> Programa sin coste 100% financiado
+        <div class="container reveal">
+            <div class="alma-grid"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+
+                <!-- Left: Content -->
+                <div class="alma-content">
+                    <h2 class="section-title" style="margin-bottom: 1.5rem;">¿Qué es el Programa ALMA?</h2>
+                    <p style="font-weight: 500; color: #1a1a1a; font-size: 1.1rem; line-height: 1.6;">
+                        ALMA es la iniciativa europea definitiva de empleo juvenil. Desarrollado por <strong>ENAE
+                            Business School</strong> y el <strong>SEF</strong>, este programa transforma tu perfil
+                        profesional mediante una combinación única de 3 pilares:
+                    </p>
+
+                    <!-- Pillars -->
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                        <div
+                            style="background: rgba(255,255,255,0.6); padding: 0.8rem 1.2rem; border-radius: 50px; display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: #1a1a1a;">
+                            <i class="fas fa-graduation-cap" style="color: var(--primary);"></i> Formación
+                        </div>
+                        <div
+                            style="background: rgba(255,255,255,0.6); padding: 0.8rem 1.2rem; border-radius: 50px; display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: #1a1a1a;">
+                            <i class="fas fa-briefcase" style="color: var(--primary);"></i> Prácticas UE
+                        </div>
+                        <div
+                            style="background: rgba(255,255,255,0.6); padding: 0.8rem 1.2rem; border-radius: 50px; display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: #1a1a1a;">
+                            <i class="fas fa-hands-helping" style="color: var(--primary);"></i> Acompañamiento
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Right: Impact Card -->
+                <div class="alma-card"
+                    style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative;">
+                    <div
+                        style="position: absolute; top: -20px; right: -20px; background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 5px 15px rgba(240, 90, 40, 0.3);">
+                        <i class="fas fa-star"></i>
+                    </div>
+
+                    <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--dark);">Más que un programa</h3>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div
+                            style="min-width: 40px; height: 40px; background: #eef2ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                            <i class="fas fa-plane-departure"></i>
+                        </div>
+                        <div>
+                            <strong style="display: block; color: var(--dark); margin-bottom: 0.2rem;">Experiencia
+                                Real</strong>
+                            <p style="font-size: 0.95rem; margin-bottom: 0;">Vive y trabaja en un país de la Unión
+                                Europea.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <div
+                            style="min-width: 40px; height: 40px; background: #eef2ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div>
+                            <strong style="display: block; color: var(--dark); margin-bottom: 0.2rem;">100%
+                                Financiado</strong>
+                            <p style="font-size: 0.95rem; margin-bottom: 0;">El programa no tiene coste para ti. Todo
+                                incluido.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+
+        <style>
+            @media (max-width: 900px) {
+                .alma-grid {
+                    grid-template-columns: 1fr !important;
+                    gap: 3rem !important;
+                }
+            }
+        </style>
     </section>
 
     <!-- WHAT IT OFFERS -->
@@ -1154,59 +1216,159 @@
     </section>
 
     <!-- TARGET & WHY -->
-    <section class="section" id="target">
-        <div class="container">
-            <div class="mba-section" style="align-items: flex-start;">
-                <!-- Who is it for -->
+    <!-- TARGET & WHY -->
+    <section class="section" id="target" style="background-color: #f0f7ff; position: relative;">
+        <!-- Container with z-index to ensure visibility over any decor -->
+        <div class="container margin-top-lg" style="position: relative; z-index: 2;">
+            <div class="mba-section" style="align-items: center; gap: 4rem;">
+                <!-- Who is it for (Left Side) -->
                 <div>
-                    <h2 class="section-title">¿Es para ti?</h2>
-                    <p>Este programa es para ti si:</p>
-                    <ul class="fa-ul" style="margin-left: 2rem;">
-                        <li style="margin-bottom: 1rem;"><span class="fa-li"><i class="fas fa-check"
-                                    style="color:var(--primary)"></i></span>Tienes 18–29 años</li>
-                        <li style="margin-bottom: 1rem;"><span class="fa-li"><i class="fas fa-check"
-                                    style="color:var(--primary)"></i></span>Estás inscrito/a como demandante de empleo
-                        </li>
-                        <li style="margin-bottom: 1rem;"><span class="fa-li"><i class="fas fa-check"
-                                    style="color:var(--primary)"></i></span>Estás en Garantía Juvenil</li>
-                        <li style="margin-bottom: 1rem;"><span class="fa-li"><i class="fas fa-check"
-                                    style="color:var(--primary)"></i></span>Quieres trabajar, formarte y vivir una
-                            experiencia internacional</li>
-                        <li style="margin-bottom: 1rem;"><span class="fa-li"><i class="fas fa-check"
-                                    style="color:var(--primary)"></i></span>Resides en la Región de Murcia</li>
-                    </ul>
-                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 800;">
-                        📌 No necesitas experiencia previa
+                    <h2 class="section-title" style="margin-bottom: 2rem;">¿Es para ti?</h2>
+                    <p style="margin-bottom: 2rem;">Únete si cumples estos requisitos:</p>
+
+                    <!-- Requirement Grid -->
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+
+                        <!-- Card 1 -->
+                        <div
+                            style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee;">
+                            <div
+                                style="width: 50px; height: 50px; background: #FFF5F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--primary); font-size: 1.2rem;">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <strong style="display: block; color: var(--dark); margin-bottom: 0.5rem;">Edad</strong>
+                            <span style="color: #555;">18 – 29 años</span>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee;">
+                            <div
+                                style="width: 50px; height: 50px; background: #eef2ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #4a90e2; font-size: 1.2rem;">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <strong
+                                style="display: block; color: var(--dark); margin-bottom: 0.5rem;">Situación</strong>
+                            <span style="color: #555;">Desempleado/a e inscrito en Garantía Juvenil</span>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div
+                            style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee;">
+                            <div
+                                style="width: 50px; height: 50px; background: #e6fffa; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #2c7a7b; font-size: 1.2rem;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <strong
+                                style="display: block; color: var(--dark); margin-bottom: 0.5rem;">Residencia</strong>
+                            <span style="color: #555;">Región de Murcia</span>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div
+                            style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee;">
+                            <div
+                                style="width: 50px; height: 50px; background: #fffaf0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #dd6b20; font-size: 1.2rem;">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <strong style="display: block; color: var(--dark); margin-bottom: 0.5rem;">Actitud</strong>
+                            <span style="color: #555;">Ganas de vivir una experiencia internacional</span>
+                        </div>
+
                     </div>
+
+
                 </div>
 
-                <!-- Why Join -->
-                <div>
-                    <h2 class="section-title">¿Por qué participar?</h2>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; gap: 1rem; align-items: center;">
-                            <span style="font-size: 1.5rem;">🌍</span>
-                            <strong>Trabajarás en países de la Unión Europea</strong>
+                <!-- Why Join (Right Side) -->
+                <div style="background: var(--dark); border-radius: 20px; padding: 3rem; color: white;">
+                    <h2 class="section-title" style="color: white; margin-bottom: 2rem;">¿Por qué participar?</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div
+                                style="min-width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                <i class="fas fa-globe-europe"></i>
+                            </div>
+                            <div>
+                                <strong
+                                    style="display: block; font-size: 1.1rem; margin-bottom: 0.3rem; color: #ffffff;">Destinos
+                                    Europeos</strong>
+                                <span style="opacity: 0.8; color: #ffffff;">Trabajarás en empresas de países de la Unión
+                                    Europea.</span>
+                            </div>
                         </div>
-                        <div style="display: flex; gap: 1rem; align-items: center;">
-                            <span style="font-size: 1.5rem;">💼</span>
-                            <strong>Ganarás experiencia laboral real y remunerada</strong>
+
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div
+                                style="min-width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <strong
+                                    style="display: block; font-size: 1.1rem; margin-bottom: 0.3rem; color: #ffffff;">Experiencia
+                                    Real</strong>
+                                <span style="opacity: 0.8; color: #ffffff;">Prácticas profesionales remuneradas en tu
+                                    sector.</span>
+                            </div>
                         </div>
-                        <div style="display: flex; gap: 1rem; align-items: center;">
-                            <span style="font-size: 1.5rem;">🎓</span>
-                            <strong>Cursarás un International MBA</strong>
+
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div
+                                style="min-width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <strong
+                                    style="display: block; font-size: 1.1rem; margin-bottom: 0.3rem; color: #ffffff;">International
+                                    MBA</strong>
+                                <span style="opacity: 0.8; color: #ffffff;">Acceso directo al máster de ENAE Business
+                                    School.</span>
+                            </div>
                         </div>
-                        <div style="display: flex; gap: 1rem; align-items: center;">
-                            <span style="font-size: 1.5rem;">🚀</span>
-                            <strong>Mejorarás tu empleabilidad</strong>
+
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div
+                                style="min-width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div>
+                                <strong
+                                    style="display: block; font-size: 1.1rem; margin-bottom: 0.3rem; color: #ffffff;">Mejorarás
+                                    tu empleabilidad</strong>
+                            </div>
                         </div>
-                        <div style="display: flex; gap: 1rem; align-items: center;">
-                            <span style="font-size: 1.5rem;">✨</span>
-                            <strong>Aumentarás tus oportunidades de futuro</strong>
+
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div
+                                style="min-width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <strong
+                                    style="display: block; font-size: 1.1rem; margin-bottom: 0.3rem; color: #ffffff;">Aumentarás
+                                    tus oportunidades</strong>
+                            </div>
                         </div>
+
+                        <!-- Highlighted Item -->
+                        <div
+                            style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 12px; margin-top: 1rem; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+                            <div style="font-size: 1.2rem; font-weight: 800; color: #ffd700;">
+                                📌 No necesitas experiencia previa
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+
+            </div>
+        </div>
+        </div>
+        </div>
         </div>
     </section>
 
