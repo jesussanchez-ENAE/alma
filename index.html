@@ -4,43 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa ALMA | Trabaja en Europa - Todo Incluido</title>
+    <title>Programa ALMA | Prácticas en Europa</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <style>
         :root {
-            /* Brand Colors Updated */
-            --primary: #ea5629;
-            /* User Orange */
-            --primary-dark: #c0401d;
-            /* Darker shade for hover */
-            --secondary: #8acde2;
-            /* User Light Blue - Used for accents/bg */
-
-            /* Neutrals */
-            --dark: #1d1e1d;
-            /* User Black */
-            --text: #1d1e1d;
-            --text-light: #4a4a4a;
-            /* Lighter shade of dark */
-            --bg-light: #f2f2f2;
-            /* User Light Gray */
+            /* Brand Colors */
+            --primary: #F05A28;
+            /* Vibrant Orange */
+            --secondary: #8FD3E8;
+            /* Pastel Blue */
+            --dark: #1A1A1A;
+            /* Near Black */
+            --gray: #F8F9FA;
+            /* Light Gray Bg */
+            --text: #1A1A1A;
+            --text-light: #555555;
             --white: #ffffff;
-            --success: #10b981;
 
             /* Spacing & Layout */
-            --container-width: 1200px;
-            --radius-md: 12px;
+            --container-width: 1240px;
+            --radius-sm: 8px;
+            --radius-md: 16px;
             --radius-lg: 24px;
-            --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
-            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
 
         * {
@@ -50,28 +43,34 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.6;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.5;
             color: var(--text);
             background-color: var(--white);
             overflow-x: hidden;
+            font-size: 18px;
         }
 
         h1,
         h2,
         h3,
         h4,
-        h5,
-        h6 {
-            font-family: 'Outfit', sans-serif;
-            color: var(--dark);
+        h5 {
+            font-weight: 800;
             line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--dark);
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        strong {
+            font-weight: 800;
+            color: var(--text);
         }
 
         .container {
@@ -80,38 +79,54 @@
             margin: 0 auto;
         }
 
+        /* --- Buttons --- */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 1rem 2rem;
-            font-weight: 700;
+            font-weight: 800;
+            text-transform: uppercase;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
         }
 
         .btn-primary {
             background-color: var(--primary);
             color: var(--white);
-            box-shadow: 0 4px 15px rgba(201, 60, 32, 0.4);
+            box-shadow: 0 4px 15px rgba(240, 90, 40, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-dark);
+            background-color: #d14010;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(201, 60, 32, 0.6);
+            box-shadow: 0 8px 20px rgba(240, 90, 40, 0.4);
         }
 
-        /* --- Decoration --- */
-        .decor-bg {
-            position: absolute;
-            z-index: -1;
-            opacity: 0.6;
-            pointer-events: none;
+        .btn-full {
+            width: 100%;
+        }
+
+        /* --- Utilities --- */
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .text-secondary {
+            color: var(--secondary);
+        }
+
+        .bg-gray {
+            background-color: var(--gray);
+        }
+
+        .section {
+            padding: 6rem 0;
         }
 
         /* --- Header --- */
@@ -123,53 +138,55 @@
             width: 100%;
             z-index: 1000;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            padding: 0.8rem 0;
+            padding: 1rem 0;
         }
 
-        .header-content {
+        .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .brand-logos {
+        .brand-logo {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
-        .brand-logos img {
-            height: 40px;
-            /* Adjust based on actual aspect ratios */
+        .brand-logo img {
+            height: 55px;
             object-fit: contain;
+            max-width: 100%;
         }
 
-        .cta-header {
-            display: none;
-            /* Mobile hidden */
-        }
-
-        @media(min-width: 768px) {
-            .cta-header {
-                display: block;
+        @media (max-width: 768px) {
+            .brand-logo {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
             }
 
-            .brand-logos img {
-                height: 50px;
+            .brand-logo img {
+                height: 40px;
+                /* Smaller logos on mobile */
+            }
+
+            .header-inner {
+                justify-content: center;
             }
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero --- */
         .hero {
             padding-top: 140px;
             /* Header space */
-            padding-bottom: 5rem;
-            background: linear-gradient(180deg, #FFF5F2 0%, #ffffff 100%);
+            padding-bottom: 4rem;
             position: relative;
+            background: linear-gradient(135deg, #FFF5F2 0%, #FFFFFF 100%);
             overflow: hidden;
         }
 
-        .hero-layout {
+        .hero-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 3rem;
@@ -177,363 +194,446 @@
         }
 
         .hero-content {
+            position: relative;
             z-index: 2;
-        }
-
-        .tag-pill {
-            display: inline-block;
-            background-color: #fff0eb;
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 10px rgba(201, 60, 32, 0.1);
         }
 
         .hero-title {
             font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, var(--dark), var(--primary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+            
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-light);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             max-width: 500px;
         }
 
-        /* Form Card */
-        .form-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            z-index: 10;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .form-card h3 {
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        .form-card p {
-            text-align: center;
-            font-size: 0.95rem;
-            color: var(--text-light);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             margin-bottom: 1.5rem;
         }
 
-        .input-group {
+        /* Form Card in Hero */
+        .hero-form-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-hover);
+            border-top: 5px solid var(--primary);
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-form-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero-form-card p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
             margin-bottom: 1rem;
         }
 
-        .input-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 0.4rem;
-        }
-
-        .input-group input,
-        .input-group select {
+        .form-control {
             width: 100%;
-            padding: 0.8rem 1rem;
-            border: 2px solid #e2e8f0;
+            padding: 1rem;
+            border: 2px solid #EEE;
             border-radius: 8px;
             font-family: inherit;
             font-size: 1rem;
             transition: border-color 0.3s;
         }
 
-        .input-group input:focus,
-        .input-group select:focus {
+        .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(234, 86, 41, 0.1);
         }
 
-        .hero-image-col {
-            position: relative;
-            display: none;
-            /* Mobile first hidden for simplicity logic, enabled below */
-        }
-
+        /* Floating Image (Desktop) */
         .hero-collage {
-            width: 100%;
-            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
-            animation: float 6s ease-in-out infinite;
+            display: none;
         }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
+        @media (max-width: 991px) {
+            .hero {
+                padding-top: 120px;
+                padding-bottom: 2rem;
+                text-align: center;
             }
 
-            50% {
-                transform: translateY(-15px);
+            .hero-title {
+                font-size: 2.25rem;
+                /* Smaller title on mobile */
             }
 
-            100% {
-                transform: translateY(0px);
+            .hero-subtitle {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-badge {
+                margin: 0 auto 1.5rem;
+            }
+
+            .hero-grid {
+                gap: 2rem;
+            }
+
+            .hero-form-card {
+                padding: 1.5rem;
+                /* Compact form on mobile */
             }
         }
 
         @media (min-width: 992px) {
-            .hero-layout {
-                grid-template-columns: 1.2fr 0.8fr;
-                /* Content | Form */
-            }
-
-            .hero-image-col {
-                display: block;
-                position: absolute;
-                right: -5%;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 45%;
-                z-index: 1;
-                opacity: 0.15;
-                /* Background effect behind form */
-            }
-
-            .hero.with-collage .hero-layout {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .hero.with-collage .hero-image-col {
-                position: relative;
-                width: 100%;
-                right: auto;
-                top: auto;
-                transform: none;
-                opacity: 1;
-            }
-
-            /* Enhanced Layout: Left Content, Center Image, Right Form?
-               Let's simplify: Left: Text + Collage below? or Right: Form + Collage behind?
-               Best for conversion: 
-               Left: Text (Value Prop)
-               Right: Form
-               Background decoration with collage elements.
-            */
-            .hero-layout {
-                grid-template-columns: 1fr 450px;
-                /* Fixed width form */
-            }
-        }
-
-        /* --- Sections --- */
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .section-desc {
-            font-size: 1.1rem;
-            color: var(--text-light);
-        }
-
-        /* Benefits Grid */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-        }
-
-        .benefit-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: var(--radius-md);
-            border: 1px solid #f1f5f9;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            border-color: rgba(201, 60, 32, 0.1);
-        }
-
-        .icon-box {
-            width: 70px;
-            height: 70px;
-            background: var(--bg-light);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 1.5rem;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .benefit-card:hover .icon-box {
-            background: var(--secondary);
-            color: var(--dark);
-        }
-
-        .benefit-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* Steps */
-        .steps-wrapper {
-            background: var(--dark);
-            color: var(--white);
-            padding: 5rem 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .steps-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('assets/decor-shapes.png');
-            background-size: cover;
-            opacity: 0.1;
-            z-index: -1;
-        }
-
-        .steps-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .step-item {
-            display: flex;
-            gap: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            border-left: 4px solid var(--primary);
-        }
-
-        .step-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: rgba(255, 255, 255, 0.2);
-            line-height: 1;
-        }
-
-        .step-content h4 {
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            font-size: 1.4rem;
-        }
-
-        .step-content p {
-            color: #cbd5e1;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: #f8f9fa;
-            padding: 4rem 0 2rem;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col h4 {
-            font-size: 1.1rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-links p,
-        .footer-links a {
-            display: block;
-            margin-bottom: 0.8rem;
-            color: var(--text-light);
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .institutional-bar {
-            border-top: 1px solid #e2e8f0;
-            padding-top: 2rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .institutional-bar img {
-            height: 40px;
-            opacity: 0.8;
-            filter: grayscale(100%);
-            transition: all 0.3s;
-        }
-
-        .institutional-bar img:hover {
-            opacity: 1;
-            filter: grayscale(0%);
-        }
-
-        @media (min-width: 768px) {
-            .steps-timeline {
-                flex-direction: row;
-            }
-
-            .step-item {
-                flex-direction: column;
-                flex: 1;
-                text-align: center;
-                border-left: none;
-                border-top: 4px solid var(--primary);
-            }
-
-            .step-number {
-                margin: 0 auto;
+            .hero-grid {
+                grid-template-columns: 1.2fr 1fr;
+                /* Text | Form */
             }
 
             .hero-title {
                 font-size: 4rem;
             }
+
+            .hero-collage {
+                display: block;
+                position: absolute;
+                left: 45%;
+                top: 50%;
+                transform: translate(-50%, -40%);
+                width: 50%;
+                max-width: 600px;
+                z-index: 1;
+                opacity: 0.4;
+                /* Placement logic: behind text/form or between them? 
+                   Let's place it behind the text to the left a bit, or between columns.
+                   Actually, let's make it sit behind the content slightly.
+                */
+                pointer-events: none;
+            }
+        }
+
+        /* --- Sections Style --- */
+        .section-header {
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Checklist Grid */
+        .checklist-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .check-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .check-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        /* Benefits / MBA */
+        .mba-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mba-visual img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            /* Used for uploaded image 2 */
+        }
+
+        /* Steps Section Redesign */
+        .steps-wrapper {
+            background-color: var(--dark);
+            color: white;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .steps-wrapper h2 {
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .steps-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            z-index: 2;
+        }
+
+        /* Connecting Line (Desktop) */
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            /* Align with number center */
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg,
+                    rgba(240, 90, 40, 0.2) 0%,
+                    var(--primary) 50%,
+                    rgba(240, 90, 40, 0.2) 100%);
+            z-index: -1;
+            display: block;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s;
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(240, 90, 40, 0.3);
+        }
+
+        .step-num {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            background: var(--dark);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50%;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(240, 90, 40, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .step-card p {
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Mobile Steps */
+        @media (max-width: 900px) {
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .steps-container::before {
+                display: none;
+                /* Hide horizontal line */
+            }
+
+            /* Vertical Line */
+            .steps-container::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                width: 2px;
+                background: var(--primary);
+                opacity: 0.3;
+                transform: translateX(-50%);
+                z-index: -1;
+                display: block;
+            }
+
+            .step-card {
+                max-width: 500px;
+                margin: 0 auto;
+                background: var(--dark);
+                /* Opaque bg to cover line behind if needed */
+            }
+        }
+
+        /* Why Join Grid */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: var(--radius-md);
+            transition: transform 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        /* Date Alert */
+        .alert-box {
+            background: #FFF5F2;
+            /* Ligth orange */
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 4rem;
+            padding: 4rem 0;
+            background: white;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .footer-logos img {
+            height: 60px;
+            /* Increased Footer Logo Size */
+            filter: none;
+            /* Removed Grayscale */
+            opacity: 1;
+            /* Type fully visible */
+            margin: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-logos {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            .footer-logos img {
+                height: 50px;
+                margin: 0;
+            }
+
+            .section {
+                padding: 4rem 0;
+                /* Reduced section padding */
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .alert-box {
+                padding: 2rem 1rem;
+            }
+
+            .alert-box h2 {
+                font-size: 1.8rem !important;
+            }
+
+            .alert-box h3 {
+                font-size: 1.5rem !important;
+            }
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .checklist-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .step-row {
+                flex-direction: row;
+            }
+
+            .step-card {
+                flex: 1;
+            }
+
+            .mba-section {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* --- Scroll Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered delays for grids */
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
         }
     </style>
 </head>
@@ -541,242 +641,338 @@
 <body>
 
     <header>
-        <div class="container header-content">
-            <div class="brand-logos">
-                <img src="assets/alma-logo.png" alt="ALMA Programa">
-                <div style="width: 1px; height: 30px; background: #ddd;"></div>
-                <img src="assets/enae-logo.png" alt="ENAE Business School">
+        <div class="container header-inner">
+            <div class="brand-logo">
+                <img src="assets/alma-logo.png" alt="ALMA">
+                <span style="height: 30px; width: 1px; background: #ddd;"></span>
+                <img src="assets/enae-logo.png" alt="ENAE">
+                <span style="height: 30px; width: 1px; background: #ddd; margin: 0 10px;"></span>
+                <img src="assets/institutional-strip.svg" alt="Cofinanciado por la UE" style="height: 45px;">
             </div>
-            <div class="cta-header">
-                <span style="font-size: 0.9rem; margin-right: 15px; font-weight: 600; color: var(--dark);">
-                    <i class="fas fa-certificate"></i> Cofinanciado por la Unión Europea
-                </span>
-            </div>
+            <!-- Text removed, replaced by image above -->
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="container hero-layout">
-            <!-- Left Content -->
-            <div class="hero-content">
-                <span class="tag-pill">✨ Becas 100% Financiadas</span>
-                <h1 class="hero-title">Vive y Trabaja en Europa</h1>
+        <!-- Collage decoration absolutely positioned on desktop -->
+        <img src="assets/hero-collage.png" alt="" class="hero-collage">
+
+        <div class="container hero-grid">
+            <!-- Left: Text -->
+            <div class="hero-content reveal">
+                <div class="hero-badge">
+                    Prácticas remuneradas en Europa
+                </div>
+                <h1 class="hero-title">Fórmate, trabaja y <span style="color: var(--primary);">vive una experiencia
+                        internacional</span></h1>
                 <p class="hero-subtitle">
-                    Fórmate, viaja y realiza <strong>prácticas remuneradas</strong> en la Unión Europea. Una experiencia
-                    internacional que transformará tu futuro laboral.
+                    Si tienes entre <strong>18 y 29 años</strong> y estás en paro, el Programa ALMA te ofrece prácticas
+                    remuneradas en países de la Unión Europea, con todo incluido y acceso a un International MBA.
                 </p>
 
-                <div class="hero-highlights" style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--text);">
-                        <i class="fas fa-check-circle" style="color: var(--success);"></i> Todo Incluido
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--text);">
-                        <i class="fas fa-check-circle" style="color: var(--success);"></i> Prácticas Reales
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--text);">
-                        <i class="fas fa-check-circle" style="color: var(--success);"></i> 18-29 Años
-                    </div>
+                <div
+                    style="margin-bottom: 2rem; font-weight: 700; color: var(--dark); display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-exclamation-circle" style="color: var(--primary);"></i>
+                    Plazas limitadas | Solicitudes hasta abril 2026
                 </div>
 
-                <!-- Visible only on desktop to balance layout -->
-                <div style="max-width: 400px; display: none; margin-top: 2rem;" class="d-lg-block">
-                    <img src="assets/institutional-logos.png" alt="Institutional Finance">
-                </div>
+                
             </div>
 
-            <!-- Right Form -->
-            <div class="form-container-wrapper" style="position: relative;">
-                <!-- Decorative Image Behind Form on Desktop -->
-                <img src="assets/hero-collage.png" alt="Collage Europa"
-                    style="position: absolute; right: -120px; top: -50px; width: 500px; opacity: 1; z-index: -1; display: block; max-width: none;"
-                    class="hero-collage mobile-hide">
-
-                <div class="form-card">
-                    <h3>¡Solicita tu Plaza!</h3>
-                    <p>Déjanos tus datos. Plazas muy limitadas.</p>
-                    <form action="#" method="POST">
-                        <div class="input-group">
-                            <label for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana García" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="ana@ejemplo.com" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="600 123 456" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="edad">Rango de Edad</label>
-                            <select id="edad" name="edad" required>
-                                <option value="" disabled selected>Selecciona...</option>
-                                <option value="valid">Tengo entre 18 y 29 años</option>
-                                <option value="invalid">Otra edad</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            ¡Quiero Informarme! <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
-                        </button>
-                        <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.8rem">
-                            <i class="fas fa-lock"></i> Tus datos están 100% seguros.
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Prop Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">¿Qué incluye el Programa ALMA?</h2>
-                <p class="section-desc">Diseñado para eliminar todas las barreras. Nosotros nos encargamos de todo, tú
-                    solo preocúpate de aprender.</p>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="icon-box"><i class="fas fa-briefcase"></i></div>
-                    <h3>Experiencia Laboral</h3>
-                    <p>Prácticas en empresas europeas de primer nivel. Añade valor internacional a tu currículum.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon-box"><i class="fas fa-plane-departure"></i></div>
-                    <h3>Estancia + Viajes</h3>
-                    <p>Vuelos, alojamiento y manutención incluidos durante tu estancia de 2 a 6 meses en el extranjero.
+            <!-- Right: Form (High Visibility) -->
+            <div class="hero-form-card reveal reveal-delay-2" id="solicitar">
+                <h3>Solicita Información</h3>
+                <p>Déjanos tus datos y te orientamos sin compromiso.</p>
+                <form action="#">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Teléfono" required>
+                    </div>
+                    <!-- Added Age Confirmation for qualification -->
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="">¿Tienes entre 18 y 29 años?</option>
+                            <option value="si">Sí, tengo entre 18 y 29</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Quiero más información <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
+                    </button>
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; margin-bottom: 0;">
+                        <i class="fas fa-lock"></i> Datos seguros. Plazas limitadas.
                     </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IS ALMA -->
+    <section class="section">
+        <div class="container section-header reveal">
+            <h2 class="section-title">¿Qué es el Programa ALMA?</h2>
+            <p>
+                ALMA es un programa europeo de empleo juvenil que combina formación, prácticas remuneradas en la UE y
+                acompañamiento profesional, diseñado para mejorar tu empleabilidad y abrirte nuevas oportunidades
+                laborales.
+            </p>
+            <div
+                style="padding: 1.5rem; background: #eef2ff; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 1.1rem;">
+                No es solo formación. <br>
+                <strong>👉 Es experiencia real de trabajo en Europa.</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IT OFFERS -->
+    <section class="section bg-gray">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">¿Qué te ofrece el programa?</h2>
+
+            <div class="checklist-grid reveal reveal-delay-1">
+                <div class="check-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Prácticas remuneradas</strong>
+                        <p style="margin-bottom:0; font-size:0.95rem;">En empresas de la Unión Europea.</p>
+                    </div>
                 </div>
-                <!-- Adding ENAE Value -->
-                <div class="benefit-card">
-                    <div class="icon-box"><i class="fas fa-university"></i></div>
-                    <h3>Formación ENAE</h3>
-                    <p>Incluye formación previa y titulaciones de ENAE Business School y Panamerican University.</p>
+                <div class="check-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Estancia Europea</strong>
+                        <p style="margin-bottom:0; font-size:0.95rem;">De 2 a 6 meses en países de la UE.</p>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="icon-box"><i class="fas fa-euro-sign"></i></div>
-                    <h3>100% Financiado</h3>
-                    <p>Sin letra pequeña. El programa asume todos los costes gracias a la financiación europea.</p>
+                <div class="check-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Todo Incluido</strong>
+                        <p style="margin-bottom:0; font-size:0.95rem;">Alojamiento, manutención y transporte incluidos.
+                        </p>
+                    </div>
+                </div>
+                <div class="check-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Formación Previa</strong>
+                        <p style="margin-bottom:0; font-size:0.95rem;">Idioma y habilidades profesionales antes de
+                            viajar.</p>
+                    </div>
+                </div>
+                <div class="check-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>International MBA</strong>
+                        <p style="margin-bottom:0; font-size:0.95rem;">Acceso al International MBA de ENAE Business
+                            School y Panamerican University.</p>
+                    </div>
+                </div>
+                <div class="check-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Acompañamiento</strong>
+                        <p style="margin-bottom:0; font-size:0.95rem;">Antes, durante y después de la movilidad.</p>
+                    </div>
+                </div>
+                <div class="check-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Orientación Laboral</strong>
+                        <p style="margin-bottom:0; font-size:0.95rem;">Para tu vuelta a España.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <span class="hero-badge" style="font-size: 1.2rem; background: var(--primary); color: white;">
+                    💸 Participar no tiene coste para ti
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFFERENTIAL BENEFIT (MBA) -->
+    <section class="section">
+        <div class="container mba-section">
+            <div class="mba-visual reveal">
+                <img src="assets/benefit-collage.png" alt="Estudiante Internacional">
+                <!-- Using the 2nd uploaded image -->
+            </div>
+            <div class="reveal reveal-delay-1">
+                <h2 class="section-title">Además, cursarás un International MBA</h2>
+                <p>Durante el programa podrás realizar el International MBA, impartido por:</p>
+                <ul style="list-style: none; margin-bottom: 2rem;">
+                    <li style="font-size: 1.2rem; margin-bottom: 0.5rem;">🎓 <strong>ENAE Business School</strong></li>
+                    <li style="font-size: 1.2rem;">🎓 <strong>Panamerican University</strong></li>
+                </ul>
+                <p>Una formación internacional que refuerza tu perfil profesional y multiplica tus oportunidades de
+                    empleo, compatible con tu estancia en Europa.</p>
+
+                <div style="font-weight: 800; color: var(--primary); font-size: 1.2rem;">
+                    👉 Un máster + experiencia internacional real
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Dark Steps Section -->
+    <!-- HOW IT WORKS -->
     <section class="steps-wrapper">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" style="color: white;">Tu camino al éxito</h2>
-                <p class="section-desc" style="color: #94a3b8;">Tres pasos sencillos para transformar tu carrera
-                    profesional.</p>
-            </div>
+            <h2 class="section-title" style="text-align: center;">¿Cómo funciona ALMA?</h2>
 
-            <div class="steps-timeline">
-                <div class="step-item">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h4>Prepárate</h4>
-                        <p>Fórmate en idiomas y soft skills con expertos de ENAE en Murcia antes de tu viaje.</p>
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="step-card reveal">
+                    <div class="step-num">01</div>
+                    <h4>Prepárate<br><span style="font-size: 0.9rem; font-weight: 400; opacity: 0.7;">EN MURCIA</span>
+                    </h4>
+                    <p>Recibirás formación intensiva en idiomas y competencias clave para garantizar tu éxito en el
+                        extranjero.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-card reveal reveal-delay-1">
+                    <div class="step-num">02</div>
+                    <h4>Vive la Experiencia<br><span style="font-size: 0.9rem; font-weight: 400; opacity: 0.7;">EN LA
+                            UNIÓN EUROPEA</span></h4>
+                    <p>Viajarás con todos los gastos pagados para realizar prácticas remuneradas en una empresa europea.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-card reveal reveal-delay-2">
+                    <div class="step-num">03</div>
+                    <h4>Vuelve con Ventaja<br><span
+                            style="font-size: 0.9rem; font-weight: 400; opacity: 0.7;">ORIENTACIÓN LABORAL</span></h4>
+                    <p>A tu regreso, te ayudaremos a encontrar empleo o seguir formándote con tu nuevo perfil
+                        internacional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET & WHY -->
+    <section class="section">
+        <div class="container">
+            <div class="mba-section" style="align-items: flex-start;">
+                <!-- Who is it for -->
+                <div>
+                    <h2 class="section-title">¿Es para ti?</h2>
+                    <p>Este programa es para ti si:</p>
+                    <ul class="fa-ul" style="margin-left: 2rem;">
+                        <li style="margin-bottom: 1rem;"><span class="fa-li"><i class="fas fa-check"
+                                    style="color:var(--primary)"></i></span>Tienes 18–29 años</li>
+                        <li style="margin-bottom: 1rem;"><span class="fa-li"><i class="fas fa-check"
+                                    style="color:var(--primary)"></i></span>Estás inscrito/a como demandante de empleo
+                        </li>
+                        <li style="margin-bottom: 1rem;"><span class="fa-li"><i class="fas fa-check"
+                                    style="color:var(--primary)"></i></span>Estás en Garantía Juvenil</li>
+                        <li style="margin-bottom: 1rem;"><span class="fa-li"><i class="fas fa-check"
+                                    style="color:var(--primary)"></i></span>Quieres trabajar, formarte y vivir una
+                            experiencia internacional</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 800;">
+                        📌 No necesitas experiencia previa
                     </div>
                 </div>
-                <div class="step-item">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h4>Viaja y Trabaja</h4>
-                        <p>Vive la experiencia internacional realizando prácticas en el país de destino asignado.</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h4>Despega</h4>
-                        <p>Vuelve con experiencia, contactos y una ventaja competitiva única para el mercado laboral.
-                        </p>
+
+                <!-- Why Join -->
+                <div>
+                    <h2 class="section-title">¿Por qué participar?</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="font-size: 1.5rem;">🌍</span>
+                            <strong>Trabajarás en países de la Unión Europea</strong>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="font-size: 1.5rem;">💼</span>
+                            <strong>Ganarás experiencia laboral real y remunerada</strong>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="font-size: 1.5rem;">🎓</span>
+                            <strong>Cursarás un International MBA</strong>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="font-size: 1.5rem;">🚀</span>
+                            <strong>Mejorarás tu empleabilidad</strong>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="font-size: 1.5rem;">✨</span>
+                            <strong>Aumentarás tus oportunidades de futuro</strong>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- DATES & FINAL CTA -->
+    <section class="section bg-gray">
+        <div class="container">
+            <div class="alert-box reveal">
+                <div style="margin-bottom: 1rem; text-transform: uppercase; font-weight: 800; color: var(--primary);">
+                    ⏰ Fecha límite de inscripción
+                </div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">📅 Envía tu solicitud antes de abril de 2026</h2>
+                <p>Las plazas son limitadas y el proceso de selección se realiza por orden y perfil.</p>
+
+                <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 2rem 0;">
+
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Tu futuro empieza ahora</h3>
+                <p>No dejes pasar esta oportunidad de trabajar en Europa, formarte con un MBA y mejorar tu futuro
+                    profesional.</p>
+
+                <a href="#solicitar" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.2rem;">
+                    👉 Enviar solicitud
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="assets/alma-logo.png" alt="ALMA" style="height: 60px; margin-bottom: 1rem;">
-                    <p style="color: #64748b; font-size: 0.9rem;">
-                        Programa de movilidad internacional para jóvenes, impulsando la empleabilidad a través de la
-                        experiencia europea.
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>Contacto</h4>
-                    <div class="footer-links">
-                        <a href="tel:+34672249134"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> 672 249
-                            134</a>
-                        <a href="mailto:pedro.lopez@enae.es"><i class="fas fa-envelope" style="margin-right: 8px;"></i>
-                            pedro.lopez@enae.es</a>
-                        <a href="https://enae.es" target="_blank"><i class="fas fa-globe"
-                                style="margin-right: 8px;"></i> www.enae.es</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Requisitos</h4>
-                    <div class="footer-links">
-                        <p>• 18 a 29 años</p>
-                        <p>• Desempleado/a</p>
-                        <p>• Residente en Región de Murcia</p>
-                    </div>
-                </div>
+            <div class="footer-logos">
+                <img src="assets/alma-logo.png" alt="ALMA">
+                <img src="assets/enae-logo.png" alt="ENAE">
+                <img src="assets/institutional-strip.svg" alt="UE" style="height: 50px;">
             </div>
-
-            <div class="institutional-bar">
-                <!-- Using the pre-made logo strip or individual assets if available. 
-                     Here using the strip for convenience as per instructions. -->
-                <img src="assets/institutional-logos.png" style="height: auto; max-width: 100%; max-height: 80px;"
-                    alt="Logos Institucionales">
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #94a3b8;">
-                &copy; 2025 Programa ALMA | ENAE Business School. Todos los derechos reservados.
+            <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2026 Programa ALMA. Todos los derechos reservados.
+            </p>
+            <div style="color: var(--text-light); font-size: 0.9rem;">
+                <i class="fas fa-phone"></i> 672 249 134 &nbsp;|&nbsp; <i class="fas fa-envelope"></i>
+                pedro.lopez@enae.es
             </div>
         </div>
     </footer>
 
-    <style>
-        /* Mobile adjustment for Collage */
-        @media (max-width: 991px) {
-            .mobile-hide {
-                display: none !important;
-            }
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const reveals = document.querySelectorAll('.reveal');
 
-            .hero-layout {
-                gap: 2rem;
-            }
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: Stop observing once revealed
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15, // Trigger when 15% visible
+                rootMargin: "0px 0px -50px 0px"
+            });
 
-            .hero-content {
-                text-align: center;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .tag-pill {
-                margin: 0 auto 1.5rem;
-            }
-
-            .hero-subtitle {
-                margin: 0 auto 2rem;
-            }
-
-            /* Show collage as a static image between text and form only on mobile? 
-               Or just hide it to keep it clean. Hiding it on mobile is often improved UX for speed and focus.
-            */
-        }
-    </style>
-
+            reveals.forEach(el => revealOnScroll.observe(el));
+        });
+    </script>
 </body>
 
 </html>
