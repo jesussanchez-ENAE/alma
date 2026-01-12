@@ -236,18 +236,36 @@
             max-width: 500px;
         }
 
-        .hero-badge {
+        /* Top Hero Sticker (Rotated) */
+        .hero-sticker {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             background: white;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--primary);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+            position: absolute;
+            top: -45px;
+            left: -10px;
+            transform: rotate(-5deg);
+            z-index: 3;
+        }
+
+        /* Standard Badge (Bottom) */
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--primary);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Form Card in Hero */
@@ -916,7 +934,7 @@
         <div class="container hero-grid">
             <!-- Left: Text -->
             <div class="hero-content reveal">
-                <div class="hero-badge">
+                <div class="hero-sticker">
                     Prácticas remuneradas en Europa
                 </div>
                 <h1 class="hero-title">Fórmate, trabaja y <span style="color: var(--primary);">vive una experiencia
@@ -975,14 +993,19 @@
         <div class="container section-header reveal">
             <h2 class="section-title">¿Qué es el Programa ALMA?</h2>
             <p>
-                ALMA es un programa europeo de empleo juvenil que combina formación, prácticas remuneradas en la UE y
+                ALMA es un programa europeo de empleo juvenil, desarrollado conjuntamente por <strong>ENAE Business
+                    School</strong> y el <strong>Sef</strong>, que combina formación, prácticas remuneradas en la UE y
                 acompañamiento profesional, diseñado para mejorar tu empleabilidad y abrirte nuevas oportunidades
                 laborales.
             </p>
+
             <div
-                style="padding: 1.5rem; background: #eef2ff; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 1.1rem;">
+                style="padding: 1.5rem; background: #eef2ff; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 1.1rem; margin-top: 1rem;">
                 No es solo formación. <br>
                 <strong>👉 Es experiencia real de trabajo en Europa.</strong>
+                <div style="margin-top: 0.8rem; font-weight: 800; color: var(--primary);">
+                    <i class="fas fa-check-circle"></i> Programa sin coste 100% financiado
+                </div>
             </div>
         </div>
     </section>
