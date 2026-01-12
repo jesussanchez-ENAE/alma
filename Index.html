@@ -16,16 +16,22 @@
 
     <style>
         :root {
-            /* Brand Colors extracted from Logos */
-            --primary: #c93c20;
-            /* Alma Orange/Red */
-            --primary-dark: #a02e16;
-            --secondary: #003399;
-            /* EU Blue */
-            --dark: #0f172a;
-            --text: #334155;
-            --text-light: #64748b;
-            --bg-light: #f8fafc;
+            /* Brand Colors Updated */
+            --primary: #ea5629;
+            /* User Orange */
+            --primary-dark: #c0401d;
+            /* Darker shade for hover */
+            --secondary: #8acde2;
+            /* User Light Blue - Used for accents/bg */
+
+            /* Neutrals */
+            --dark: #1d1e1d;
+            /* User Black */
+            --text: #1d1e1d;
+            --text-light: #4a4a4a;
+            /* Lighter shade of dark */
+            --bg-light: #f2f2f2;
+            /* User Light Gray */
             --white: #ffffff;
             --success: #10b981;
 
@@ -215,7 +221,7 @@
         }
 
         .form-card h3 {
-            color: var(--secondary);
+            color: var(--primary);
             margin-bottom: 0.5rem;
             text-align: center;
         }
@@ -253,7 +259,8 @@
         .input-group input:focus,
         .input-group select:focus {
             outline: none;
-            border-color: var(--secondary);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(234, 86, 41, 0.1);
         }
 
         .hero-image-col {
@@ -339,7 +346,7 @@
 
         .section-title {
             font-size: 2.5rem;
-            color: var(--secondary);
+            color: var(--dark);
             margin-bottom: 1rem;
         }
 
@@ -374,8 +381,8 @@
         .icon-box {
             width: 70px;
             height: 70px;
-            background: #EFF6FF;
-            color: var(--secondary);
+            background: var(--bg-light);
+            color: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -386,8 +393,8 @@
         }
 
         .benefit-card:hover .icon-box {
-            background: var(--primary);
-            color: var(--white);
+            background: var(--secondary);
+            color: var(--dark);
         }
 
         .benefit-card h3 {
@@ -467,7 +474,7 @@
 
         .footer-col h4 {
             font-size: 1.1rem;
-            color: var(--secondary);
+            color: var(--primary);
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -541,7 +548,7 @@
                 <img src="assets/enae-logo.png" alt="ENAE Business School">
             </div>
             <div class="cta-header">
-                <span style="font-size: 0.9rem; margin-right: 15px; font-weight: 600; color: var(--secondary);">
+                <span style="font-size: 0.9rem; margin-right: 15px; font-weight: 600; color: var(--dark);">
                     <i class="fas fa-certificate"></i> Cofinanciado por la Unión Europea
                 </span>
             </div>
