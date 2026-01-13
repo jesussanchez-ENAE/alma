@@ -270,15 +270,15 @@
         }
 
         /* Form Card in Hero */
-        .hero-form-card { 
-    background: rgba(255, 255, 255, 0.5);
-    padding: 2.5rem;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-hover);
-    border-top: 5px solid var(--primary);
-    position: relative;
-    z-index: 10;
-    backdrop-filter: blur(5px);
+        .hero-form-card {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-hover);
+            border-top: 5px solid var(--primary);
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(5px);
         }
 
         .hero-form-card h3 {
@@ -386,10 +386,13 @@
             text-transform: uppercase;
         }
 
-        /* Checklist Grid */
+        /* Benefits Grid System */
         .checklist-grid {
             display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
+            position: relative;
+            /* Anchor for absolute child */
         }
 
         .check-item {
@@ -401,6 +404,7 @@
             border-radius: var(--radius-sm);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
             border-left: 4px solid var(--secondary);
+            height: 100%;
         }
 
         .check-item i {
@@ -409,7 +413,46 @@
             margin-top: 3px;
         }
 
-        /* Benefits / MBA */
+        /* Image Slot - Absolute per user request */
+        .benefits-image-slot {
+            position: absolute;
+            width: 100%;
+            max-width: 500px;
+            right: -20%;
+            bottom: -40%;
+            z-index: 1;
+            /* Ensure above or below? Usually decor is behind or low priority. */
+            pointer-events: none;
+        }
+
+        .benefits-image-slot img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 900px) {
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Responsive Adaptation */
+            .benefits-image-slot {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                max-width: 100%;
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
+                order: 10;
+            }
+
+            .benefits-image-slot img {
+                max-width: 80%;
+                /* Limit size on mobile */
+            }
+        }
+
         .mba-section {
             display: grid;
             grid-template-columns: 1fr;
@@ -1080,6 +1123,7 @@
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">¿Qué te ofrece el programa?</h2>
 
+            <!-- Benefits Grid: 2 Columns, 8 Slots (7 Items + 1 Image) -->
             <div class="checklist-grid reveal reveal-delay-1">
                 <div class="check-item">
                     <i class="fas fa-check-circle"></i>
@@ -1132,6 +1176,12 @@
                         <strong>Orientación Laboral</strong>
                         <p style="margin-bottom:0; font-size:0.95rem;">Para tu vuelta a España.</p>
                     </div>
+                </div>
+
+                <!-- 8th Slot: Image -->
+                <div class="benefits-image-slot">
+                    <img src="assets/colage_Alma_3.png" alt="Beneficios del Programa ALMA"
+                        style="max-width: 100%; height: auto; ">
                 </div>
             </div>
 
