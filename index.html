@@ -359,17 +359,14 @@
             .hero-collage {
                 display: block;
                 position: absolute;
-                left: 45%;
+                left: 50%;
                 top: 50%;
-                transform: translate(-50%, -40%);
+                transform: translate(-50%, -50%);
                 width: 50%;
                 max-width: 600px;
                 z-index: 1;
                 opacity: 0.2;
-                /* Placement logic: behind text/form or between them? 
-                   Let's place it behind the text to the left a bit, or between columns.
-                   Actually, let's make it sit behind the content slightly.
-                */
+                /* Placement logic: Centered in the hero block */
                 pointer-events: none;
             }
         }
@@ -974,7 +971,8 @@
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
         <!-- Collage decoration absolutely positioned on desktop -->
-        <img src="assets/hero-collage.png" alt="" class="hero-collage">
+        <img src="assets/hero-collage.png" alt="" class="hero-collage parallax-layer" data-speed="0.15"
+            data-centered="true">
 
         <div class="container hero-grid">
             <!-- Left: Text -->
@@ -1180,8 +1178,8 @@
 
                 <!-- 8th Slot: Image -->
                 <div class="benefits-image-slot">
-                    <img src="assets/colage_Alma_3.png" alt="Beneficios del Programa ALMA"
-                        style="max-width: 100%; height: auto; ">
+                    <img src="assets/colage_Alma_3.png" alt="Beneficios del Programa ALMA" class="parallax-layer"
+                        data-speed="0.08" style="max-width: 100%; height: auto; ">
                 </div>
             </div>
 
@@ -1198,7 +1196,8 @@
         <img src="assets/shape-3.png" alt="" class="floating-shape shape-3" data-speed="0.08">
         <div class="container mba-section">
             <div class="mba-visual reveal">
-                <img src="assets/benefit-collage.png" alt="Estudiante Internacional">
+                <img src="assets/benefit-collage.png" alt="Estudiante Internacional" class="parallax-layer"
+                    data-speed="0.08">
                 <!-- Using the 2nd uploaded image -->
             </div>
             <div class="reveal reveal-delay-1">
@@ -1510,13 +1509,19 @@
 
             // Parallax Effect
             window.addEventListener('scroll', function () {
-                const shapes = document.querySelectorAll('.floating-shape');
+                const shapes = document.querySelectorAll('.floating-shape, .parallax-layer');
                 const scrollY = window.pageYOffset;
 
                 shapes.forEach(shape => {
                     const speed = shape.getAttribute('data-speed');
+                    const isCentered = shape.getAttribute('data-centered') === 'true';
                     const yPos = scrollY * speed;
-                    shape.style.transform = `translateY(${yPos}px)`;
+
+                    if (isCentered) {
+                        shape.style.transform = `translate(-50%, -50%) translateY(${yPos}px)`;
+                    } else {
+                        shape.style.transform = `translateY(${yPos}px)`;
+                    }
                 });
             });
         });
