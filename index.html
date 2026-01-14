@@ -1511,8 +1511,15 @@
             window.addEventListener('scroll', function () {
                 const shapes = document.querySelectorAll('.floating-shape, .parallax-layer');
                 const scrollY = window.pageYOffset;
+                const isMobile = window.innerWidth <= 991;
 
                 shapes.forEach(shape => {
+                    // Disable parallax on mobile to prevent overlap
+                    if (isMobile) {
+                        shape.style.transform = '';
+                        return;
+                    }
+
                     const speed = shape.getAttribute('data-speed');
                     const isCentered = shape.getAttribute('data-centered') === 'true';
                     const yPos = scrollY * speed;
