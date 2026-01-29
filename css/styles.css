@@ -842,7 +842,7 @@ footer {
 
 .floating-cta {
     position: fixed;
-    bottom: 2rem;
+    bottom: 8rem;
     right: 2rem;
     width: 60px;
     height: 60px;
